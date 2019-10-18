@@ -5,7 +5,7 @@
  */
 package Controlador;
 
-import LoginMVC.modelo.Consultas;
+import LoginMVC.modelo.DaoUser;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -39,12 +39,13 @@ public class Validacion extends HttpServlet {
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
         
-        Consultas con = new Consultas();
+        DaoUser con = new DaoUser();
         
         if(con.Autenticacion(user, pass))
             response.sendRedirect("LoginCorrecto.jsp");
         else 
             response.sendRedirect("ingreso.jsp");
+            
         
         //System.out.println(con.Autenticacion(user, pass));
         

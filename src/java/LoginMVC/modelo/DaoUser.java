@@ -13,7 +13,7 @@ import java.sql.Statement;
  *
  * @author juanc
  */
-public class Consultas extends Conexion{
+public class DaoUser extends Dao{
     
     
     public boolean Autenticacion(String user,String pass) throws SQLException
@@ -32,7 +32,7 @@ public class Consultas extends Conexion{
         return false;
     }
  /* public static void main(String[] args) throws SQLException{
-      Consultas con = new Consultas();
+      DaoUser con = new DaoUser();
       System.out.println(con.Autenticacion("juan", "123"));
   }*/
 }

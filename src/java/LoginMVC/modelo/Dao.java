@@ -14,11 +14,11 @@ import java.sql.SQLException;
  *
  * @author hackro
  */
-public class Conexion
+public class Dao
 {
     
     public static final String USERNAME = "root";
-    public static final String PASSWORD = "Kampz2019";
+    public static final String PASSWORD = "";
     public static final String HOST = "localhost";
     public static final String PORT = "3306";
     public static final String DATABASE = "loginapp";
@@ -27,7 +27,7 @@ public class Conexion
     
      public java.sql.Connection con;
      
-       public Conexion() {
+       public Dao() {
   
         try {
            Class.forName(CLASSNAME);
@@ -39,7 +39,7 @@ public class Conexion
         }
 }
      /*  public static void main(String[] args){
-       Conexion con = new Conexion();
+       Dao con = new Dao();
        }*/
        
 }
