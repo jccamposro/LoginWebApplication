@@ -9,16 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/style2.css"/>
         <title>LoginApplication</title>
     </head>
     <body>
         <h1>LoginApplication</h1>
-        <div>
-        <a class="Ingresar" href="ingreso.jsp"><h1>Ingresar</h1></a>
-        </div>
-        <div>
-        <a class="Registrar" href="registro.jsp"><h1>Registrarse</h1></a>
-        </div>
+        <div><a class="Ingresar" href="ingreso.jsp"><h1>Ingresar</h1></a></div>
+        <div><a class="Registrar" href="registro.jsp"><h1>Registrarse</h1></a></div>
     </body>
 </html>

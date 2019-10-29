@@ -1,6 +1,6 @@
 <%-- 
-    Document   : LoginCorrecto
-    Created on : 17/10/2019, 06:54:23 PM
+    Document   : NoValido
+    Created on : 28/10/2019, 11:23:38 PM
     Author     : juanc
 --%>
 
@@ -10,10 +10,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/style2.css"/>
-        <title>Acceso Correcto</title>
+        <title>No Valido</title>
     </head>
     <body>
-        <h1>Bienvenido! Acceso Valido</h1>
+        <h1>Datos no validos ¿Quieres volver a intentar?</h1>
+        <div><a class="Si" href="ingreso.jsp"><h1>SI</h1></a></div>
+        <div><a class="No" href="index.jsp"><h1>NO</h1></a></div>
     </body>
-    <a class="Cerrar" href="index.jsp"><h5>Cerrar Sesion</h5></a>
 </html>

@@ -18,7 +18,7 @@ public class DaoUser extends Dao{
     
     public boolean Autenticacion(String user,String pass) throws SQLException
     {
-        Statement st = con.createStatement();
+        Statement st = conexion.createStatement();
         ResultSet rs = null;
         String Consulta = "Select * from Usuarios";
         rs = st.executeQuery(Consulta);

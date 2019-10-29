@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,24 +33,42 @@ public class Validacion extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws java.sql.SQLException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
+        HttpSession respuesta = request.getSession(true);
         response.setContentType("text/html;charset=UTF-8");
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
-        
+        VerificarLogin v = new VerificarLogin();
         DaoUser con = new DaoUser();
         
-        if(con.Autenticacion(user, pass))
-            response.sendRedirect("LoginCorrecto.jsp");
-        else 
-            response.sendRedirect("ingreso.jsp");
-            
         
-        //System.out.println(con.Autenticacion(user, pass));
+         if(!v.verificarLongitudNombre(user)){
+            respuesta.setAttribute("error", "Longitud Nombre Incorrecta");
+            System.out.println("Longitud Nombre Incorrecta");
+            response.sendRedirect("NoValido.jsp");
+        }else{
+                if(!v.verificarLongitudPassword(pass)){
+                    respuesta.setAttribute("error", "Longitud Contraseña Incorrecta");
+                    System.out.println("Longitud Contraseña Incorrecta");
+                    response.sendRedirect("NoValido.jsp");
+                    }
+                     else {
+                            if(con.Autenticacion(user, pass)){
+                            response.sendRedirect("LoginCorrecto.jsp");
+                            System.out.println("Acceso Valido");
+                                }
+                                else{
+                                respuesta.setAttribute("error","Datos Invalidos");
+                                System.out.println("Datos Incorrectos");
+                                response.sendRedirect("NoValido.jsp");
+                }
+            }
+        }
         
-       // System.out.println(user+ "  "+pass);
+        System.out.println("Usuario: "+user+ "  Contraseña: "+pass);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

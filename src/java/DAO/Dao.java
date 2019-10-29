@@ -25,13 +25,13 @@ public class Dao
     public static final String CLASSNAME = "com.mysql.jdbc.Driver";
     public static final String URL = "jdbc:mysql://"+ HOST +":"+PORT+"/"+DATABASE;
     
-     public java.sql.Connection con;
+     public java.sql.Connection conexion;
      
        public Dao() {
   
         try {
            Class.forName(CLASSNAME);
-            con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            conexion = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (ClassNotFoundException e) {
             System.out.println("Error");
         } catch (SQLException e) {
@@ -41,5 +41,12 @@ public class Dao
      /*  public static void main(String[] args){
        Dao con = new Dao();
        }*/
-       
+       public void conectar() throws SQLException,ClassNotFoundException{
+         Class.forName("com.mysql.jdbc.Driver");
+         conexion=DriverManager.getConnection("jdbc:mysql://localhost:8080/IngeSoftI",USERNAME, PASSWORD);
+    }
+    //Desconectar a la Base de datos
+    public void desconectar() throws SQLException, ClassNotFoundException{
+        conexion.close();
+    }
 }
