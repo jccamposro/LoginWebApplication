@@ -9,11 +9,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/style2.css"/>
+        <link rel="stylesheet" href="css/stylef.css"/>
         <title>Acceso Correcto</title>
     </head>
     <body>
         <h1>Bienvenido! Acceso Valido</h1>
     </body>
-    <a class="Cerrar" href="index.jsp"><h5>Cerrar Sesion</h5></a>
+    <div class="action2">
+    <a  href="index.jsp"><h5>Cerrar Sesion</h5></a>
+    </div>
 </html>

@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/style2.css"/>
+        <link rel="stylesheet" href="css/stylef.css"/>
         <title>Registro</title>
     </head>
     <body>
@@ -25,6 +25,8 @@
                 <p><input type="submit" name="Registrar" id="Registrar" value="Registrar"/></p>
             </form>
         </div>
-        <a class="Volver" href="index.jsp"><h5>Volver</h5></a>
+        <div class ="action2">
+        <a  href="index.jsp"><h5>Volver</h5></a>
+        </div>
     </body>
 </html>
