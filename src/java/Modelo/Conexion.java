@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
+package Modelo;
 
 import java.sql.DriverManager;
 import java.sql.DriverManager;
@@ -14,7 +14,7 @@ import java.sql.SQLException;
  *
  * @author hackro
  */
-public class Dao
+public class Conexion
 {
     
     public static final String USERNAME = "root";
@@ -27,7 +27,7 @@ public class Dao
     
      public java.sql.Connection conexion;
      
-       public Dao() {
+       public Conexion() {
   
         try {
            Class.forName(CLASSNAME);
@@ -39,7 +39,7 @@ public class Dao
         }
 }
      /*  public static void main(String[] args){
-       Dao con = new Dao();
+       Conexion con = new Conexion();
        }*/
        public void conectar() throws SQLException,ClassNotFoundException{
          Class.forName("com.mysql.jdbc.Driver");

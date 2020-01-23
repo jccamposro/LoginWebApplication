@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/stylef.css"/>
+        <link rel="stylesheet" href="css/style1.css"/>
         <title>No Valido</title>
     </head>
     <body>

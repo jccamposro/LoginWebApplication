@@ -9,11 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/stylef.css"/>
+        <link rel="stylesheet" href="css/style1.css"/>
         <title>LoginApplication</title>
     </head>
     <body>
-        <h1>LOGINAPPLICATION</h1>
+        <h1>LoginApplication</h1>
         <div class="action">
             <a  href="ingreso.jsp"><h2>Ingresar</h2></a>
             <a  href="registro.jsp"><h2>Registrarse</h2></a>

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
+package Modelo;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,14 +13,14 @@ import java.sql.Statement;
  *
  * @author juanc
  */
-public class DaoUser extends Dao{
+public class Consultas extends Conexion{
     
     
     public boolean Autenticacion(String user,String pass) throws SQLException
     {
         Statement st = conexion.createStatement();
         ResultSet rs = null;
-        String Consulta = "Select * from Usuarios";
+        String Consulta = "Select * from usuarios";
         rs = st.executeQuery(Consulta);
         
         while(rs.next())
@@ -32,7 +32,7 @@ public class DaoUser extends Dao{
         return false;
     }
  /* public static void main(String[] args) throws SQLException{
-      DaoUser con = new DaoUser();
+      Consultas con = new Consultas();
       System.out.println(con.Autenticacion("juan", "123"));
   }*/
 }

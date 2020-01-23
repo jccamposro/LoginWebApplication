@@ -5,7 +5,7 @@
  */
 package Control;
 
-import DAO.DaoUser;
+import Modelo.Consultas;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -37,21 +37,19 @@ public class Validacion extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
-        HttpSession respuesta = request.getSession(true);
+       
         response.setContentType("text/html;charset=UTF-8");
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
         VerificarLogin v = new VerificarLogin();
-        DaoUser con = new DaoUser();
+        Consultas con = new Consultas();
         
         
          if(!v.verificarLongitudNombre(user)){
-            respuesta.setAttribute("error", "Longitud Nombre Incorrecta");
             System.out.println("Longitud Nombre Incorrecta");
             response.sendRedirect("NoValido.jsp");
         }else{
                 if(!v.verificarLongitudPassword(pass)){
-                    respuesta.setAttribute("error", "Longitud Contraseña Incorrecta");
                     System.out.println("Longitud Contraseña Incorrecta");
                     response.sendRedirect("NoValido.jsp");
                     }
@@ -61,7 +59,6 @@ public class Validacion extends HttpServlet {
                             System.out.println("Acceso Valido");
                                 }
                                 else{
-                                respuesta.setAttribute("error","Datos Invalidos");
                                 System.out.println("Datos Incorrectos");
                                 response.sendRedirect("NoValido.jsp");
                 }
